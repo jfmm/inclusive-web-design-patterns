@@ -1,0 +1,76 @@
+/*! v. 1.0 | MIT License  */
+
+
+html {
+  /* Use the font-size set by the user in their browser settings */
+	font-size: 100%; 
+
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: #0072c6;
+}
+
+
+nav {
+  background-color: #efefef;
+  padding: 10px 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.7em;
+}
+
+
+nav li {
+  margin-right: 20px;
+  list-style-type: none;
+  display: inline
+}
+
+
+
+
+h1,
+h2,
+p {
+  font-family:  Helvetica, Arial, sans-serif;
+  color: #2f2f2f;
+
+}
+
+
+#skip-link {
+  display: inline-block;
+  background-color: #cbcbcb;
+  width: 100%;
+  padding: 0.5em;
+}
+
+
+main {
+  width: 100%;
+  max-width: 55rem;
+  margin: 0 auto; /* center the main content */
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+p a {
+ 
+background:  linear-gradient(#fff,#fff),linear-gradient(#fff,#fff),linear-gradient(#FF3530,#FF3530);
+      background-size: .05em 1px,.05em 1px,1px 1px;
+    background-repeat: no-repeat,no-repeat,repeat-x;
+    text-shadow: .03em 0 #fff,-.03em 0 #fff,0 .03em #fff,0 -.03em #fff,.06em 0 #fff,-.06em 0 #fff,.09em 0 #fff,-.09em 0 #fff,.12em 0 #fff,-.12em 0 #fff,.15em 0 #fff,-.15em 0 #fff;
+    background-position: 0 95%,100% 95%,0 95%;
+}
