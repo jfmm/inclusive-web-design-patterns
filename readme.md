@@ -8,7 +8,10 @@ The patterns have been largely based and inpired by the amazing work done by des
 
 Each template and component was developed using semantic HTML and minimally styled with CSS so that you can use it more easily in your projects.
 
-* A Blog Post (blog-post.html)
+
+### Blog Post (blog-post.html)
+This lean, semantic template focuses on hierarchy, source order, and structure to ensure the post is useful to screen readers. 
+
 * A log-in form
 * More to come!
 
