@@ -9,8 +9,22 @@ html {
 
 
 body {
-  font-family: sans-serif;
+  font-family: "gotham", sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #222; /* for lower, less visually-harsh contrast, preferred to pure black*/
+}
+
+
+
+
 
 a {
   color: #0072c6;
@@ -55,22 +69,138 @@ p {
 }
 
 
+
+/***
+@ Typesetting patterns:
+Create a comfortable reading experience
+**/
+
 main {
-  width: 100%;
+/*Line Meaure: A line between 45-75 characters is comfortable to read.
+55rem max-width for container element ensures that paragraph and surrounding elements do not surpass this measure */
   max-width: 55rem;
-  margin: 0 auto; /* center the main content */
 }
+
 
 p {
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 1rem;/* 100% of root font-size*/
+  line-height: 1.5; /* 1.5x of root font-size*/
+	text-align: left; /* left aligment is far more legible*/
 }
 
+/***
+@ Inline Links pattern (that is, links in paragraphs):
+In order to ensure that the underline style of the link, does not cross and block the descenders of some characters in some typefaces(i.e. y,q,g), we create an underline using a linear
+gradient. This in turn creates a more legible type and therefore more legible body text.
+***/
+
 p a {
- 
-background:  linear-gradient(#fff,#fff),linear-gradient(#fff,#fff),linear-gradient(#FF3530,#FF3530);
-      background-size: .05em 1px,.05em 1px,1px 1px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: .03em 0 #fff,-.03em 0 #fff,0 .03em #fff,0 -.03em #fff,.06em 0 #fff,-.06em 0 #fff,.09em 0 #fff,-.09em 0 #fff,.12em 0 #fff,-.12em 0 #fff,.15em 0 #fff,-.15em 0 #fff;
-    background-position: 0 95%,100% 95%,0 95%;
+	color: #0072c6;
+	text-decoration: none;
+	background-image: linear-gradient(to right, #005a9d 0%, #005a9d 100%);
+	background-repeat: repeat-x;
+	background-position: bottom 0.09em center;
+	background-size: 100% 0.09em;
+	text-shadow: 0.04em 0 0 #fff, -0.04em 0 0 #fff,0 0.04em 0 #fff, 0 -0.04em 0 #fff;
+	transition: 0.1s ease-in color;
+}
+
+/* Optional Hover styles...*/
+p a:hover {
+	color: #66b6f0;
+	background: none;
+}
+
+
+/* Fallback for < IE9 use helper class .ie-lte-9*/
+
+.ie-lte-9 a {
+	text-decoration: underline;
+}
+
+
+
+
+/***
+Inline Links Focus pattern:
+
+<a> tags are focusable by default, but the following styles ensure a consistent look and a better across browsers. It's also better looking, really.
+
+Note: depending on the background color of the page, or element containing the link, the color parameter of the text-shadow will need to be changed to ensure visibility and congruence with branding. 	
+***/
+
+p a:focus, a:focus {
+	outline: none;
+	background-color: #cef;
+	text-shadow: 0.05em 0 0 #cef, -0.05em 0 0 #cef, 0 0.05em 0 #cef, 0 -0.05em 0 #cef, 0.1em 0 0 #cef, -0.1em 0 0 #cef, 0 0.1em 0 #cef, 0 -0.1em 0 #cef;
+}
+
+
+
+
+/***
+
+Visually Hidden Helper class:
+
+The .visually-hidden class invokes a special set of properties, carefully devised to hide the element visually without it becoming silenced in screen reader software 	
+***/
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/***
+
+ESTABLISHING A FLOW SYSTEM
+When people enter content into a WYSIWYG Editor, often a lot of unintended markup and inconsistent styling is rendered (i.e. empty <p> tags). The following styles help establish a consistent editing flow system so that all elements are spaced consistently without having editors delve into the HTML.
+
+Vertical Rythm Pattern:
+
+it’s good practice to at least use your paragraph line height as a basis for vertical spacing.
+
+TODO: When porting to Sass, use dynamic formula to increase margin top by 2
+***/
+
+main * + * {
+	margin-top: 2rem;
+}
+
+
+li, dt, dd, br, th, td {
+	margin-top: 0;
+}
+
+
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: 1.5em;
+}
+
+
+/*
+To separate supplementary content such as blockquotes, videos,
+and illustrations from the paragraph text, you can apply a
+greater margin for anything that isn’t a <p>:
+*/
+
+main * + *:not(p) {
+	margin: 3rem 0; /* these values can be adjusted, of course */
+}
+
+
+
+/* 
+Defensive coding pattern: when the WYSIWYG editor enters unwanted <p> or empty tags we can remove the styling from this unwanted, empty markup:
+*/
+
+main :empty {
+	display: none;
 }
