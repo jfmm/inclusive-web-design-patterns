@@ -79,6 +79,8 @@ main {
 /*Line Meaure: A line between 45-75 characters is comfortable to read.
 55rem max-width for container element ensures that paragraph and surrounding elements do not surpass this measure */
   max-width: 55rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
