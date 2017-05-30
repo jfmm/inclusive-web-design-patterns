@@ -1,4 +1,4 @@
-# Inclusive Web Design Patterns
+# Inclusive Web Design Pattern Library
 
 This repository presents a set of open-sourced HTML templates and components that have been desigen with inclusivness and accessibility in mind. 
 
